@@ -9,14 +9,18 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
 import { routes } from './app.routes';
 import { provideRouter } from '@angular/router';
 
+const firebaseProviders = [
+  provideFirebaseApp(() => initializeApp(environment.firebase)),
+  provideFirestore(() => getFirestore()),
+  provideAuth(() => getAuth()),
+  provideFunctions(() => getFunctions()),
+  provideStorage(() => getStorage()),
+  provideMessaging(() => getMessaging())
+];
+
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
-    provideAuth(() => getAuth()),
-    provideFunctions(() => getFunctions()),
-    provideStorage(() => getStorage()),
-    provideMessaging(() => getMessaging()),
+    ...firebaseProviders,
     provideRouter(routes)
   ],
 };
