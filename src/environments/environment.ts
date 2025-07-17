@@ -8,7 +8,7 @@ export const environment = {
     apiKey: "AIzaSyBAjZIJobO3KpIYuQMJ5D9y6Wwfvvk-OHE",
     authDomain: "friendlychat-15567.firebaseapp.com",
     projectId: "friendlychat-15567",
-    storageBucket: "friendlychat-15567.firebasestorage.app",
+    storageBucket: "friendlychat-15567.appspot.com",
     messagingSenderId: "511919141787",
     appId: "1:511919141787:web:dd00faffe2469053fce73e"
   }
